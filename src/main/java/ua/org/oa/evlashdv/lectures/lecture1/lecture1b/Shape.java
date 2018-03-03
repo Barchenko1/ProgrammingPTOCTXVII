@@ -13,5 +13,8 @@ public class Shape {
         private int green;
         private int blue;
 
+        public Color(int i, int i1, int i2) {
+
+        }
     }
 }

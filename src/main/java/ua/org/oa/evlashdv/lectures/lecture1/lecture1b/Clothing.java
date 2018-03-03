@@ -9,6 +9,10 @@ public abstract class Clothing {
     private String name;
     private int price;
 
+    public Clothing(String name, int price) {
+
+    }
+
     public void wash() {
 
     }

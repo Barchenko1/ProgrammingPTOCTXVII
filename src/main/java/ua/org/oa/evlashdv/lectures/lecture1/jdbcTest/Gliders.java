@@ -136,7 +136,7 @@ public class Gliders {
     }
 
     public static Gliders[] selectAllGliders(){
-        List<Gliders> glidersList=new ArrayList<Gliders>();
+        ArrayList<Gliders> glidersArrayList=new ArrayList<Gliders>();
         DBWorker worker=new DBWorker();
         String query="SELECT * FROM gliders";
         try {
@@ -153,7 +153,7 @@ public class Gliders {
                 glider.setLength(resultSet.getDouble("length"));
                 glider.setHeight(resultSet.getDouble("height"));
                 glider.setTeam(resultSet.getInt("team"));
-                glidersList.add(glider);
+                glidersArrayList.add(glider);
             }
             resultSet.close();
             statement.close();
@@ -161,9 +161,38 @@ public class Gliders {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Gliders [] glidersArray=new Gliders[glidersList.size()];
-        glidersList.toArray(glidersArray);
+        Gliders [] glidersArray=new Gliders[glidersArrayList.size()];
+        glidersArrayList.toArray(glidersArray);
         return glidersArray;
+    }
+
+    public static ArrayList selectAllGlidersArrayList(){
+        ArrayList<Gliders> glidersArrayList=new ArrayList<>();
+        DBWorker worker=new DBWorker();
+        String query="SELECT * FROM gliders";
+        try {
+            Statement statement=worker.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                Gliders glider=new Gliders();
+                glider.setId(resultSet.getInt("id"));
+                glider.setName(resultSet.getString("name"));
+                glider.setType(resultSet.getString("type"));
+                glider.setDeveloper(resultSet.getString("developer"));
+                glider.setCountry(resultSet.getString("country"));
+                glider.setMass(resultSet.getInt("mass"));
+                glider.setLength(resultSet.getDouble("length"));
+                glider.setHeight(resultSet.getDouble("height"));
+                glider.setTeam(resultSet.getInt("team"));
+                glidersArrayList.add(glider);
+            }
+            resultSet.close();
+            statement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return glidersArrayList;
     }
 
     public int getId() {

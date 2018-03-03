@@ -37,7 +37,7 @@ public class BookTableModel extends AbstractTableModel{
     @Override
     public String getColumnName(int columnCount){
         switch (columnCount){
-            case 0:return "#id";
+            case 0:return "id";
             case 1:return "name";
             case 2:return "type";
             case 3:return "developer";
@@ -81,35 +81,5 @@ public class BookTableModel extends AbstractTableModel{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-    public static Gliders[] selectAllGliders(){
-        List<Gliders> glidersList=new ArrayList<Gliders>();
-        DBWorker worker=new DBWorker();
-        String query="SELECT * FROM gliders";
-        try {
-            Statement statement=worker.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()){
-                Gliders glider=new Gliders();
-                glider.setId(resultSet.getInt("id"));
-                glider.setName(resultSet.getString("name"));
-                glider.setType(resultSet.getString("type"));
-                glider.setDeveloper(resultSet.getString("developer"));
-                glider.setCountry(resultSet.getString("country"));
-                glider.setMass(resultSet.getInt("mass"));
-                glider.setLength(resultSet.getDouble("length"));
-                glider.setHeight(resultSet.getDouble("height"));
-                glider.setTeam(resultSet.getInt("team"));
-                glidersList.add(glider);
-            }
-            resultSet.close();
-            statement.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        Gliders [] glidersArray=new Gliders[glidersList.size()];
-        glidersList.toArray(glidersArray);
-        return glidersArray;
     }
 }

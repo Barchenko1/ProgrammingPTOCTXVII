@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class App {
-   // public static List<String> stringList=new ArrayList<>;
+    //public static List<String> stringList=new ArrayList<>;
 	public static void main(String[] args) {
 		Clothing clothing=new Shirt("Shirt",250);
 		clothing.wash();
-	  //  stringList.add("Hello");
+	   // stringList.add("Hello");
 		Shape.Color color=new Shape.Color(25,25,89);
 		System.out.println(color);
 		Circle.Point point=new Circle(5,5,"green").new Point();

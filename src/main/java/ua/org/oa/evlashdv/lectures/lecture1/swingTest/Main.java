@@ -28,8 +28,8 @@ public class Main {
         JButton loginButton = new JButton("Login in");
         JButton registrationButton = new JButton("Registration");
 
-        JTextField text1Field = new JTextField(10);
-        JTextField text2Field = new JTextField(10);
+        //JTextField text1Field = new JTextField(10);
+        //JTextField text2Field = new JTextField(10);
 
         JButton myButton = new JButton();
 
