@@ -17,8 +17,6 @@ public class BinarySearchRec {
         }
         return -1;
     }
-
-
     public static void main(String args[])
     {
         BinarySearchRec ob = new BinarySearchRec();
