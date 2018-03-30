@@ -1,5 +1,6 @@
 package ua.org.oa.evlashdv.lectures.lecture1.swingTest;
 
+import ua.org.oa.evlashdv.lectures.lecture1.LemonFinalProject.MyTableModelG;
 import ua.org.oa.evlashdv.lectures.lecture1.jdbcTest.DBWorker;
 import ua.org.oa.evlashdv.lectures.lecture1.jdbcTest.Gliders;
 import ua.org.oa.evlashdv.lectures.lecture1.jdbcTest.Helicopters;
@@ -33,11 +34,7 @@ public class TestFrame extends JFrame {
         JButton deleteButton=new JButton("Изменить");
         JButton clearButton=new JButton("Удалить");
 
-        MyTableModel btm=new MyTableModel(glidersList);
-        JTable bookTable=new JTable(btm);
-        JScrollPane bookTableScroolPage=new JScrollPane(bookTable);
-        bookTableScroolPage.setPreferredSize(new Dimension(400,400));
-
+//
         //btm.addData(worker);
 
         //btm.selectAllGliders();
