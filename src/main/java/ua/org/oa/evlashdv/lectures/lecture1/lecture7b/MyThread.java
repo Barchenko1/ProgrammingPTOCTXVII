@@ -3,7 +3,6 @@ package ua.org.oa.evlashdv.lectures.lecture1.lecture7b;
 public class MyThread extends Thread {
     @Override
     public void run() {
-        Thread t=new Thread(new MyThread());
         System.out.println("Start Thread name- "+getName());
         for (int i = 0; i < 10; i++) {
             System.out.println(getName()+" -- "+i);

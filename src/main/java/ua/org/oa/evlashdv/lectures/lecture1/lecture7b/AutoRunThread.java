@@ -13,7 +13,6 @@ public class AutoRunThread extends Thread{
                 Thread.sleep(250);
             } catch (InterruptedException e) {
                 return;
-                //e.printStackTrace();
             }
         }
         System.out.println("End Thread name= "+getName());
