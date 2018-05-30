@@ -8,6 +8,6 @@ public class FactorialNotRec {
     }
 
     public static void main(String[] args) {
-        System.out.println(FactorialRec.fact(3));
+        System.out.println(FactorialRec.fact(100));
     }
 }
