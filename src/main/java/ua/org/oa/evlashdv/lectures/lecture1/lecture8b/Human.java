@@ -1,6 +1,6 @@
 package ua.org.oa.evlashdv.lectures.lecture1.lecture8b;
 
-public class Human {
+public class Human {    //human
     private int id;
     private String name;
     private int age;
