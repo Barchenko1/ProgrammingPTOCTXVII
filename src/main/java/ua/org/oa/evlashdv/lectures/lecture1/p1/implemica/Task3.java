@@ -19,7 +19,7 @@ public class Task3 {
     public static List<Integer> DigitsInNumber(BigInteger number) {
         String n = String.valueOf(number);
         char[] charArray = n.toCharArray();
-        List<Integer> cia = new ArrayList<Integer>();
+        List<Integer> cia = new ArrayList<>();
         for (int i = 0;i<charArray.length; i++){
             int c = Character.getNumericValue(charArray[i]);
             cia.add(c);
