@@ -6,36 +6,40 @@ import java.util.List;
 
 
 public class Task3 {
-    static double fact(int num){
+    private static double fact(int num){ // Method to find factorial of given number
         return (num==0) ? 1 : num*fact(num-1);
     }
-    static BigInteger factB(int n){
+
+    private static BigInteger factBig(int n){ // Method to find factorial of given big number
         BigInteger res=BigInteger.ONE;
         for (int i = 2; i <=n ; i++) {
             res=res.multiply(BigInteger.valueOf(i));
         }
         return res;
     }
-    public static List<Integer> DigitsInNumber(BigInteger number) {
-        String n = String.valueOf(number);
-        char[] charArray = n.toCharArray();
-        List<Integer> cia = new ArrayList<>();
+    private static List<Integer> toNumbersList(BigInteger number) {  // Method to create a list of numbers
+        String numberToStr = String.valueOf(number);    //String of numbers
+        char[] charArray = numberToStr.toCharArray();   //Char array of string
+        List<Integer> listOfNumbers = new ArrayList<>();
         for (int i = 0;i<charArray.length; i++){
-            int c = Character.getNumericValue(charArray[i]);
-            cia.add(c);
+            int c = Character.getNumericValue(charArray[i]);    //Get char and shift to integer
+            listOfNumbers.add(c);   //Add all chars to list of numbers
         }
-        return cia;
+        return listOfNumbers;
+    }
+    private static int getSumOfNumbers(BigInteger bigNumber) { //Method to summation numbers
+        List<Integer> intList=toNumbersList(bigNumber);
+        int sum=0;
+        for (int i = 0; i <intList.size(); i++) {
+            sum+= intList.get(i);   //Summation of all numbers in the array
+        }
+        return sum;
     }
     public static void main(String[] args) {
-        System.out.println(fact(100));
-        BigInteger BigN=factB(100);
-        System.out.println(factB(100));
-        List<Integer> iList=DigitsInNumber(BigN);
-        System.out.println(DigitsInNumber(BigN));
-        int sum=0;
-        for (int i = 0; i <iList.size(); i++) {
-            sum+= iList.get(i);
-        }
-        System.out.println(sum);
+        BigInteger BigNumber=factBig(100);
+        System.out.println(BigNumber);
+        System.out.println(toNumbersList(BigNumber));
+        int sum = getSumOfNumbers(BigNumber);
+        System.out.println(sum); //Total sum of factorial 100
     }
 }
