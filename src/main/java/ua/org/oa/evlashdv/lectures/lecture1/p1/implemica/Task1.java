@@ -20,7 +20,7 @@ public class Task1 {
             String in = reader.readLine(); // Read value from console
             int number = Integer.parseInt(in); // Parse number of brackets
             System.out.println("Number of brackets: " + number);
-            System.out.println("Number of true bracket expressions: " + brackets(number));
+            System.out.println("Number of bracket expressions: " + brackets(number));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NumberFormatException e) {
