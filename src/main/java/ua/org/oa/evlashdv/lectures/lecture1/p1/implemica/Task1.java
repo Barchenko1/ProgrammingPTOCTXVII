@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Task1 {
-    static int brackets(int n) {
+    static int brackets(int n) { // Method to find number of brackets by given number
         int[] C = new int[n + 1];
             C[0] = 1;
             for (int i = 1; i <= n; i++) {
@@ -16,8 +16,8 @@ public class Task1 {
             return C[n];
     }
     public static void main (String[]args){
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-            String in = reader.readLine(); // Read data from console
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){ // Input stream in try-catch with resources
+            String in = reader.readLine(); // Read value from console
             int number = Integer.parseInt(in); // Parse number of brackets
             System.out.println("Number of brackets: " + number);
             System.out.println("Number of true bracket expressions: " + brackets(number));
