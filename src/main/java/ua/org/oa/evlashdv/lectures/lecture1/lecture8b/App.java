@@ -5,40 +5,67 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class App {
-    private static final String URL="jdbc:mysql://localhost:3306/mydbtest";
-    private static final String USERNAME="root";
-    private static final String PASSWORD="878988qqq";
-    private static final String SQL_CREATE="CREATE TABLE IF NOT EXISTS movie(id int AUTO_INCREMENT primary key, title VARCHAR(30), description VARCHAR (30), duration INT)";
-    private static final String SQL_INSERT="INSERT INTO movie(title,description,duration) VALUES(?,?,?)";
-    private static final String SQL_READ="SELECT * FROM human";
-
+    public static final String SQL_CREATE_TABLE="CREATE TABLE IF NOT EXISTS movie(id int AUTO_INCREMENT primary key,title varchar(30),description varchar(30),duration int)";
+    public static final String SQL_INSERT="INSERT INTO movie(title,description,duration)VALUES(?,?,?)";
+    public static final String SQL_SELECT_ALL="SELECT * FROM movie";
     public static void main(String[] args) {
-        Movie movie=new Movie("Titanic","Good film",150);
-        System.out.println(movie);
-        try (Connection connection=DriverManager.getConnection(URL,USERNAME,PASSWORD)){
+        String url="jdbc:mysql://localhost:3306/test?useSSL=false";
+        String user="root";
+        String pass="878988qqq";
+        List<Movie> movieList=new ArrayList<>();
+        movieList.add(new Movie("Dracula","Horror",123));
+        movieList.add(new Movie("Matrix","Fantasy",120));
+        movieList.add(new Movie("Titanic","Drama",116));
+        List<Movie>moviesFromDB = null;
+        try (Connection connection= DriverManager.getConnection(url,user,pass);){
             Statement statement=connection.createStatement();
-            statement.execute(SQL_CREATE);
-            addMovie(connection,movie);
+            statement.execute(SQL_CREATE_TABLE);
+            //saveMovie(movieList,connection);
+            moviesFromDB=readAllMovies(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(movie);
+        movieList.forEach(System.out::println);
+        System.out.println("`````````````````");
+        moviesFromDB.forEach(System.out::println);
     }
 
-    private static void addMovie(Connection connection, Movie movie) {
-        try (PreparedStatement statement=connection.prepareStatement(SQL_INSERT,Statement.RETURN_GENERATED_KEYS)){
-            statement.setString(1,movie.getTitle());
-            statement.setString(2,movie.getDescription());
-            statement.setInt(3,movie.getDuration());
-            statement.executeUpdate();
-            ResultSet rs=statement.getGeneratedKeys();
-            if (rs.next()){
-                movie.setId(rs.getInt(1));
+    private static List<Movie> readAllMovies(Connection connection) {
+        List<Movie> movieList=new ArrayList<>();
+        try (Statement statement=connection.createStatement();
+        ResultSet rs=statement.executeQuery(SQL_SELECT_ALL)){
+            Movie movie;
+            while (rs.next()){
+                movie=new Movie();
+                movie.setId(rs.getInt("id"));
+                movie.setTitle(rs.getString("title"));
+                movie.setDescription(rs.getString("description"));
+                movie.setDuration(rs.getInt("duration"));
+                movieList.add(movie);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return movieList;
+    }
+
+    public static void saveMovie(List<Movie> movieList,Connection connection){
+        try (PreparedStatement preparedStatement=connection.prepareStatement(SQL_INSERT,Statement.RETURN_GENERATED_KEYS)){
+            for (Movie movie:movieList){
+                preparedStatement.setString(1,movie.getTitle());
+                preparedStatement.setString(2,movie.getDescription());
+                preparedStatement.setInt(3,movie.getDuration());
+                System.out.println(preparedStatement.executeUpdate());
+                ResultSet rs=preparedStatement.getGeneratedKeys();
+                if (rs.next()){
+                    movie.setId(rs.getInt(1));
+                }
+                rs.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
 }
-

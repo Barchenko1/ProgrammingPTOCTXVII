@@ -15,13 +15,40 @@ public class Movie {
         this.duration = duration;
     }
 
+    public Movie() {
+    }
+
     public Movie(String title, String description, int duration) {
         this.title = title;
         this.description = description;
         this.duration = duration;
     }
 
-    public Movie() {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Movie movie = (Movie) o;
+        return id == movie.id &&
+                duration == movie.duration &&
+                Objects.equals(title, movie.title) &&
+                Objects.equals(description, movie.description);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, title, description, duration);
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", duration=" + duration +
+                '}';
     }
 
     public int getId() {
@@ -54,32 +81,5 @@ public class Movie {
 
     public void setDuration(int duration) {
         this.duration = duration;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Movie movie = (Movie) o;
-        return id == movie.id &&
-                duration == movie.duration &&
-                Objects.equals(title, movie.title) &&
-                Objects.equals(description, movie.description);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(id, title, description, duration);
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", duration=" + duration +
-                '}';
     }
 }
