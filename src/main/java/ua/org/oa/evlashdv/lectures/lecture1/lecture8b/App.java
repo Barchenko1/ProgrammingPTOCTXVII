@@ -9,7 +9,7 @@ public class App {
     public static final String SQL_INSERT="INSERT INTO movie(title,description,duration)VALUES(?,?,?)";
     public static final String SQL_SELECT_ALL="SELECT * FROM movie";
     public static void main(String[] args) {
-        String url="jdbc:mysql://localhost:3306/test?useSSL=false";
+        String url="jdbc:mysql://localhost:3306/mydbtest";
         String user="root";
         String pass="878988qqq";
         List<Movie> movieList=new ArrayList<>();
