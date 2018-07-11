@@ -1,6 +1,6 @@
 package ua.org.oa.evlashdv.lectures.lecture1.spring;
 
-public class ProfileController implements spring.ProfileControllerMBean {
+public class ProfileController implements ProfileControllerMBean {
     private boolean enable=true;
 
     public boolean isEnable() {
