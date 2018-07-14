@@ -1,6 +1,6 @@
-package servlets;
+package ua.org.oa.evlashdv.lectures.lecture1.servlet;
 
-import jsp.Student;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

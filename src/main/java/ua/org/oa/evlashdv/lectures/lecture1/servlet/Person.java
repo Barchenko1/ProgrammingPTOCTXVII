@@ -1,4 +1,4 @@
-package jsp;
+package ua.org.oa.evlashdv.lectures.lecture1.servlet;
 
 public class Person {
     private String name;

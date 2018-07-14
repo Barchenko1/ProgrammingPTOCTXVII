@@ -1,4 +1,4 @@
-package servlets;
+package ua.org.oa.evlashdv.lectures.lecture1.servlet;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

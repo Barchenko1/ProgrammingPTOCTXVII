@@ -1,7 +1,4 @@
-package servlets;
-
-import jsp.MyModel;
-import jsp.Student;
+package ua.org.oa.evlashdv.lectures.lecture1.servlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
