@@ -16,6 +16,7 @@ public class BubbleSortNotRec {
             System.out.print(arr[i]+" ");
         }
     }
+
     public static void main(String[] args) {
         BubbleSortNotRec ob=new BubbleSortNotRec();
         int arr[]={64, 34, 25, 12, 22, 11, 90};

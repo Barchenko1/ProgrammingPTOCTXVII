@@ -14,7 +14,6 @@ public class BubbleSortGC {
         }
         System.out.println(Arrays.toString(arr));
     }
-
     private static void swap(int[] arr, int index) {
         int temp=arr[index];
         arr[index]=arr[index+1];
