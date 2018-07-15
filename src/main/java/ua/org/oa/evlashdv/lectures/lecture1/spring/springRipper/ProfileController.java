@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.spring;
+package ua.org.oa.evlashdv.lectures.lecture1.spring.springRipper;
 
 public class ProfileController implements ProfileControllerMBean {
     private boolean enable=true;

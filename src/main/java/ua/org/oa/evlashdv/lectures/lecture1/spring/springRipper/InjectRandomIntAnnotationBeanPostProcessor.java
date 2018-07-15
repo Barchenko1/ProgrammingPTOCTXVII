@@ -1,9 +1,8 @@
-package ua.org.oa.evlashdv.lectures.lecture1.spring;
+package ua.org.oa.evlashdv.lectures.lecture1.spring.springRipper;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.util.ReflectionUtils;
-import ua.org.oa.evlashdv.lectures.lecture1.spring.InjectRandomInt;
 
 import java.lang.reflect.Field;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.spring;
+package ua.org.oa.evlashdv.lectures.lecture1.spring.springRipper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -6,7 +6,6 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import ua.org.oa.evlashdv.lectures.lecture1.spring.PostProxy;
 
 import java.lang.reflect.Method;
 

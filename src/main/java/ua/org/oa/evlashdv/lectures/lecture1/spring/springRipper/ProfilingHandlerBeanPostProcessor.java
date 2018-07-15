@@ -1,9 +1,7 @@
-package ua.org.oa.evlashdv.lectures.lecture1.spring;
+package ua.org.oa.evlashdv.lectures.lecture1.spring.springRipper;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import ua.org.oa.evlashdv.lectures.lecture1.spring.ProfileController;
-import ua.org.oa.evlashdv.lectures.lecture1.spring.Profiling;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;

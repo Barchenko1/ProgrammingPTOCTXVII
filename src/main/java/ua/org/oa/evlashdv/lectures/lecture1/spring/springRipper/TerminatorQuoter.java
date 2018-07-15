@@ -1,9 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.spring;
-
-import ua.org.oa.evlashdv.lectures.lecture1.spring.InjectRandomInt;
-import ua.org.oa.evlashdv.lectures.lecture1.spring.PostProxy;
-import ua.org.oa.evlashdv.lectures.lecture1.spring.Profiling;
-import ua.org.oa.evlashdv.lectures.lecture1.spring.Quoter;
+package ua.org.oa.evlashdv.lectures.lecture1.spring.springRipper;
 
 import javax.annotation.PostConstruct;
 

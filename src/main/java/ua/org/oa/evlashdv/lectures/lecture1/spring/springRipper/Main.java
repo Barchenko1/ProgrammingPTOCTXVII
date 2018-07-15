@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.spring;
+package ua.org.oa.evlashdv.lectures.lecture1.spring.springRipper;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
