@@ -10,7 +10,7 @@ public class ParseDemo {
         String str;
         int i;
         int sum=0;
-        System.out.println("введите 0");
+        System.out.println("введите 0-для выхода");
         do {
             str=br.readLine();
             try {
