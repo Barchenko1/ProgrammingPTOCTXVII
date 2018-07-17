@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.p1.implemica.task2;
+package ua.org.oa.evlashdv.lectures.lecture1.practice.implemica.task2;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

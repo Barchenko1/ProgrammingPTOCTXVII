@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Администратор
+  ua.org.oa.evlashdv.lectures.lecture1.eeJspServletApp.var1.User: Администратор
   Date: 24.06.2018
   Time: 23:22
   To change this template use File | Settings | File Templates.

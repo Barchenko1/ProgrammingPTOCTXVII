@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.p1.TelegramBotVer1_0;
+package ua.org.oa.evlashdv.lectures.lecture1.practice.TelegramBotVer1_0;
 
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;

@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.p1.implemica.task2;
+package ua.org.oa.evlashdv.lectures.lecture1.practice.implemica.task2;
 
 public class TravelPrice {
     private static int[][] Price; // Array of transportation costs between cities

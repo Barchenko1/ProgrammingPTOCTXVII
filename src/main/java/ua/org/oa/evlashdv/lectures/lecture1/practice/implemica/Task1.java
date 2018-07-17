@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.p1.implemica;
+package ua.org.oa.evlashdv.lectures.lecture1.practice.implemica;
 
 import java.io.BufferedReader;
 import java.io.IOException;

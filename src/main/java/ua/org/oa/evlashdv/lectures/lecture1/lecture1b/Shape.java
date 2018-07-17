@@ -5,7 +5,7 @@ import lombok.*;
 public class Shape {
     @Getter
     @Setter
-    @AllArgsConstructor
+    //@AllArgsConstructor
     @ToString
     @NoArgsConstructor
     static class Color{
