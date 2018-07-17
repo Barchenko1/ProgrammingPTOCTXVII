@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.practices;
+package ua.org.oa.evlashdv.lectures.lecture1.algorithms;
 
 public class BinarySearchRec {
     int binarySearch(int arr[], int l, int r, int x)

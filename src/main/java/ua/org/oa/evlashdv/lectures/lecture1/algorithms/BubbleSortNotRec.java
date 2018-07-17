@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.practices;
+package ua.org.oa.evlashdv.lectures.lecture1.algorithms;
 public class BubbleSortNotRec {
     void bubbleSort(int arr[]){
         for (int i = 0; i < arr.length-1; i++) {
