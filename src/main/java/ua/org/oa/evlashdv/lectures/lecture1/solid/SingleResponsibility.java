@@ -19,7 +19,6 @@ class Cooker implements Employee {
     }
 }
 class Janitor implements Employee{
-
     @Override
     public int getSalary() {
         return 0;
