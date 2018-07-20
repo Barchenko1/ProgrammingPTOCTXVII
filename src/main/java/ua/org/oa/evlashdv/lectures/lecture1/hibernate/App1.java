@@ -10,24 +10,33 @@ import java.util.Date;
 public class App1 {
     public static void main(String[] args) {
         UserDetails user=new UserDetails();
+        Address addr=new Address();
+        Address addr2=new Address();
+
+        addr.setStreet("Street Name");
+        addr.setCity("city name");
+        addr.setState("first State");
+        addr.setPinCode("10001");
+
+        addr2.setStreet("second street name");
+        addr2.setCity("second city name");
+        addr2.setState("second State");
+        addr2.setPinCode("20002");
+
+        user.getListOfAddresses().add(addr);
+        user.getListOfAddresses().add(addr2);
 
         user.setName("First User");
-        user.setAddress("First User's address");
         user.setJoinedDate(new Date());
         user.setDescription("description of the user goes here");
+//        user.setHomeAddress(addr);
+//        user.setOfficeAddress(addr2);
 
-        UserDetails user2=new UserDetails();
-
-        user2.setName("Second User");
-        user2.setAddress("Second User's address");
-        user2.setJoinedDate(new Date());
-        user2.setDescription("description of the user goes here");
 
         SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
         Session session=sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
-        session.save(user2);
         session.getTransaction().commit();
         session.close();
 
@@ -35,7 +44,11 @@ public class App1 {
 
         session=sessionFactory.openSession();
         session.beginTransaction();
-        user=session.get(UserDetails.class,2);
-        System.out.println("user name retrieved is "+user.getName());
+        user=session.get(UserDetails.class,1);
+        session.close();
+        System.out.println(user.getListOfAddresses().size());
+
+
+
     }
 }
