@@ -7,7 +7,7 @@ public class Demo{
 		Part4.main(new String[]{"4","6"});
 		Part5.main(new String[]{"123"});
 		Part6.main(new String[]{"10"});
-		Part7.main(new String[]{"27","AA","AD"});
+		Part7.main(new String[]{"29","AC","AE"});
 		
 	}
 
