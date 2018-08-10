@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.testPractice;
+package ua.org.oa.evlashdv.lectures.lecture1.testPractice.testPractice1;
 public class Part2{
 	public static void main(String[] args){
 		int num1=Integer.parseInt(args[0]);

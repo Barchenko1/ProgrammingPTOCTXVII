@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.testPractice;
+package ua.org.oa.evlashdv.lectures.lecture1.testPractice.testPractice1;
 public class Demo{
 	public static void main(String[] args) {
 		Part1.main(new String[]{});
