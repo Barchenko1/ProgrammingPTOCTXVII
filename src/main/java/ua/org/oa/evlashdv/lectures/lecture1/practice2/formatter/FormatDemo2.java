@@ -1,4 +1,4 @@
-package ua.org.oa.evlashdv.lectures.lecture1.regEx.formatter;
+package ua.org.oa.evlashdv.lectures.lecture1.practice2.formatter;
 
 import java.util.Formatter;
 
