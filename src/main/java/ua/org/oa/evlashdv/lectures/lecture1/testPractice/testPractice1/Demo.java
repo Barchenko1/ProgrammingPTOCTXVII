@@ -1,7 +1,7 @@
 package ua.org.oa.evlashdv.lectures.lecture1.testPractice.testPractice1;
 public class Demo{
 	public static void main(String[] args) {
-		System.out.println("===Part1===");
+		System.out.println("===part1===");
 		Part1.main(new String[]{});
 		System.out.println("===Part2===");
 		Part2.main(new String[]{"2","2"});

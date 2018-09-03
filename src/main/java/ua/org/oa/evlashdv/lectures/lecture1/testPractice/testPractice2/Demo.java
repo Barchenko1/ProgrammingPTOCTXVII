@@ -3,7 +3,7 @@ package ua.org.oa.evlashdv.lectures.lecture1.testPractice.testPractice2;
 import java.util.Iterator;
 public class Demo {
     public static void main(String[] args) {
-        System.out.println("==== Part1");
+        System.out.println("==== part1");
         MyList list = new MyListImpl();
 // [A, A2]
         list.add("A");
