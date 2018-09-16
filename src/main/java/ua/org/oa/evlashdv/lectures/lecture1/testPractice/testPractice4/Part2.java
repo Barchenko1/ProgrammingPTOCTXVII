@@ -8,77 +8,73 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Part2 {
-	private static final String RAW_DATA = "part2.txt";
-	private static final String SORTED_DATA = "part2_sorted.txt";
-	private static final int N = 10;
-	private static final int MAX = 50;
-	
+	private static final String FILE = "part2.txt";
+	private static final String SORTED = "part2_sorted.txt";
+	private static final int NUM = 10;
+	private static final int MAXNUM = 50;
+
 	public static void main(String[] args) throws IOException {
-		StringBuilder build = new StringBuilder();
-		File fileRaw = new File(RAW_DATA);
-		fileRaw.createNewFile();
-		BufferedWriter buffWriter1 = new BufferedWriter(new FileWriter(fileRaw));
-		for (int i = 0; i < N; i++) {
-			build.append((int) (Math.random() * MAX) + " ");
+		StringBuilder builder=new StringBuilder();
+		File file=new File(FILE);
+		file.createNewFile();
+		BufferedWriter writer = new BufferedWriter(new FileWriter(FILE));
+		for (int i = 0; i < NUM; i++) {
+			builder.append((int) (Math.random() * MAXNUM) + " ");
 		}
-		buffWriter1.write(build.toString());
-		buffWriter1.close();
-		System.out.println("input  ==> " + fileToString(fileRaw));
-		File fileSorted = new File(SORTED_DATA);
+		writer.write(builder.toString());
+		writer.flush();
+		writer.close();
+		System.out.println("input  ==> " + fileToString(file));
+		File fileSorted=new File(SORTED);
 		fileSorted.createNewFile();
-		BufferedWriter buffWriter2 = new BufferedWriter(new FileWriter(fileSorted));
-		buffWriter2.write(sorted(fileToIntArray(fileRaw)));
-		buffWriter2.close();
+		BufferedWriter writer2=new BufferedWriter(new FileWriter(fileSorted));
+		writer2.write(bubbleSort(fileToIntArr(file),NUM));
+		writer2.flush();
+		writer2.close();
 		System.out.println("output ==> " + fileToString(fileSorted));
 	}
-	private static int[] fileToIntArray(File file) throws IOException {
-		BufferedReader buffReader = new BufferedReader(new FileReader(file));
-		String[] array = buffReader.readLine().split(" ");
-		buffReader.close();
-		int[] array1 = new int[N];
-		for (int i = 0; i < array.length; i++) {
-			array1[i] = Integer.parseInt(array[i]);
-		}
 
-		return array1;
-	}
-	private static String sorted(int[] array) {
-		int index = 0;
-		int counter = 0;
-		while (true) {
-			if (array[index] > array[index + 1]) {
-				int q = array[index];
-				array[index] = array[index + 1];
-				array[index + 1] = q;
-				counter = 0;
-			} else {
-				counter++;
-			}
-			index++;
-			if (index == array.length - 1) {
-				index = 0;
-			}
-			if (counter == array.length - 1)
-				break;
-		}
-		return arrayToString(array);
-	}
-	private static String arrayToString(int[] array) {
-		StringBuilder build = new StringBuilder();
-		for (int i = 0; i < array.length; i++) {
-			build.append(array[i] + " ");
-		}
-		return build.toString();
-	}
 	private static String fileToString(File file) throws IOException {
-		BufferedReader buffReader = new BufferedReader(new FileReader(file));
-		StringBuilder build = new StringBuilder();
-		String test;
-		while ((test = buffReader.readLine()) != null) {
-			build.append(test);
+		BufferedReader bufferReader = new BufferedReader(new FileReader(file));
+		StringBuilder builder = new StringBuilder();
+		String text;
+		while((text=bufferReader.readLine())!=null) {
+			builder.append(text);
 		}
-		buffReader.close();
-		return build.toString();
+		bufferReader.close();
+		return builder.toString();
 	}
 
+	private static int[] fileToIntArr(File file) throws IOException {
+		BufferedReader bufferReader = new BufferedReader(new FileReader(file));
+		String[] arr=bufferReader.readLine().split(" ");
+		bufferReader.close();
+		int[] arr1=new int[NUM];
+		for(int i=0;i<arr.length;i++) {
+			arr1[i]=Integer.parseInt(arr[i]);
+		}
+		return arr1;
+	}
+
+	private static String bubbleSort(int arr[], int n){
+		if (n==1)
+			return "";
+		for (int i = 0; i <n-1 ; i++) {
+			if (arr[i]>arr[i+1]){
+				int temp=arr[i];
+				arr[i]=arr[i+1];
+				arr[i+1]=temp;
+			}
+			bubbleSort(arr,n-1);
+		}
+		return arrToString(arr);
+	}
+
+	private static String arrToString(int arr[]){
+		StringBuilder builder=new StringBuilder();
+		for(int i=0;i<arr.length;i++) {
+			builder.append(arr[i]+" ");
+		}
+		return builder.toString();
+	}
 }

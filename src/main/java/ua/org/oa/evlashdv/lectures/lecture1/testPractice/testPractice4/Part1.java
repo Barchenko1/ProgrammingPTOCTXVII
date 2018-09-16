@@ -8,35 +8,38 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Part1 {
-	private static final String FILE_NAME = "part1.txt";
+
+	private static final String FILE = "part1.txt";
 	private static final String ENCODING = "Cp1251";
 	private static final String REGEX = "(\\w{4,})";
 
 	public static void main(String[] args) throws IOException {
 		StringBuilder builder=new StringBuilder();
-		StringBuffer buffForCopy = new StringBuffer();
+		StringBuffer buffer = new StringBuffer();
 		useFile(builder);
-		changeUpperCase(builder, buffForCopy);
-		System.out.println(buffForCopy);
+		changeCase(builder, buffer);
+		//builder.delete(builder.length()-1, builder.length());
+		System.out.println(buffer);
+
 	}
 
 	private static void useFile(StringBuilder builder) throws IOException {
+		BufferedReader reader=new BufferedReader(new InputStreamReader(new FileInputStream(FILE),ENCODING));
 		String test;
-		BufferedReader buffReader = new BufferedReader(new InputStreamReader(new FileInputStream(FILE_NAME),ENCODING));
-		while((test=buffReader.readLine())!=null) {
+		while ((test=reader.readLine())!=null) {
 			builder.append(test+"\n");
 		}
-		buffReader.close();
+		reader.close();
+		builder.delete(builder.length()-1, builder.length());
 	}
 
-	private static void changeUpperCase(StringBuilder builder, StringBuffer buffForCopy) {
-		Pattern patt = Pattern.compile(REGEX, Pattern.UNICODE_CHARACTER_CLASS);
-		Matcher match = patt.matcher(builder);
+	private static void changeCase(StringBuilder builder, StringBuffer buffer) {
+		Pattern pattern=Pattern.compile(REGEX,Pattern.UNICODE_CHARACTER_CLASS);
+		Matcher match=pattern.matcher(builder);
 		while(match.find()) {
-			match.appendReplacement(buffForCopy, match.group().toUpperCase());
+			match.appendReplacement(buffer, match.group().toUpperCase());
 		}
-		match.appendTail(buffForCopy);
-		buffForCopy.delete(buffForCopy.length()-1, buffForCopy.length());
+		match.appendTail(buffer);
 	}
 
 }

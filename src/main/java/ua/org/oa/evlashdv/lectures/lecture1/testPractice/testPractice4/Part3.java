@@ -10,15 +10,10 @@ import java.util.regex.Pattern;
 
 public class Part3 {
 	private static final String FILE_NAME = "part3.txt";
-
 	private static final String ENCODING = "Cp1251";
-
 	private static final String REGEX_CHAR = "(?<!\\w)[\\w](?!\\w+)";
-
 	private static final String REGEX_STRING = "[a-zA-Zà-ÿÀ-ß]{2,}";
-
 	private static final String REGEX_INT = "(?<=\\s)\\d+(?=\\s)";
-
 	private static final String REGEX_DOUBLE = "(\\d*\\.\\d*)";
 	
 	public static void main(String[] args) throws IOException {
@@ -27,19 +22,19 @@ public class Part3 {
 		String[] array = byteArrayToString().split("\n");
 		for (String test : array) {
 			if (test.toLowerCase().equals("char")) {
-				result.append("char ==> " + parsedString(input, REGEX_CHAR) + "\n");
+				result.append("char ==> " + parsedString(input, REGEX_CHAR) + System.lineSeparator());
 				continue;
 			}
 			if (test.toLowerCase().equals("string")) {
-				result.append("String ==> " + parsedString(input, REGEX_STRING) + "\n");
+				result.append("String ==> " + parsedString(input, REGEX_STRING) + System.lineSeparator());
 				continue;
 			}
 			if (test.toLowerCase().equals("int")) {
-				result.append("int ==> " + parsedString(input, REGEX_INT) + "\n");
+				result.append("int ==> " + parsedString(input, REGEX_INT) + System.lineSeparator());
 				continue;
 			}
 			if (test.toLowerCase().equals("double")) {
-				result.append("double ==> " + parsedString(input, REGEX_DOUBLE) + "\n");
+				result.append("double ==> " + parsedString(input, REGEX_DOUBLE) + System.lineSeparator());
 				continue;
 			}
 		}
