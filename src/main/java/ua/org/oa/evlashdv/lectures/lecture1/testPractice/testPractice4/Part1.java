@@ -11,15 +11,25 @@ public class Part1 {
 	private static final String FILE_NAME = "part1.txt";
 	private static final String ENCODING = "Cp1251";
 	private static final String REGEX = "(\\w{4,})";
+
 	public static void main(String[] args) throws IOException {
 		StringBuilder builder=new StringBuilder();
 		StringBuffer buffForCopy = new StringBuffer();
+		useFile(builder);
+		changeUpperCase(builder, buffForCopy);
+		System.out.println(buffForCopy);
+	}
+
+	private static void useFile(StringBuilder builder) throws IOException {
 		String test;
 		BufferedReader buffReader = new BufferedReader(new InputStreamReader(new FileInputStream(FILE_NAME),ENCODING));
 		while((test=buffReader.readLine())!=null) {
 			builder.append(test+"\n");
 		}
 		buffReader.close();
+	}
+
+	private static void changeUpperCase(StringBuilder builder, StringBuffer buffForCopy) {
 		Pattern patt = Pattern.compile(REGEX, Pattern.UNICODE_CHARACTER_CLASS);
 		Matcher match = patt.matcher(builder);
 		while(match.find()) {
@@ -27,10 +37,6 @@ public class Part1 {
 		}
 		match.appendTail(buffForCopy);
 		buffForCopy.delete(buffForCopy.length()-1, buffForCopy.length());
-		System.out.println(buffForCopy);
-		
-		
-		
 	}
 
 }

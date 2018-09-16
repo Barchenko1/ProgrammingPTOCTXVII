@@ -23,7 +23,7 @@ public class Parser implements Iterable<String>{
 		String test;
 		try {BufferedReader buffReader = new BufferedReader(
 				new InputStreamReader(new FileInputStream(fileName), encoding));
-		
+
 		while ((test = buffReader.readLine()) != null) {
 			build.append(test + "\n");
 		}
@@ -33,10 +33,10 @@ public class Parser implements Iterable<String>{
 			e.printStackTrace();
 			return new StringBuilder();
 		}
-		
+
 		return build;
 	}
-	
+
 	@Override
 	public Iterator<String> iterator() {
 		return new MyIterator();
@@ -71,10 +71,6 @@ public class Parser implements Iterable<String>{
 			}
 			result.delete(result.length() - 1, result.length());
 			return result.toString();
-		}
-
-		public void remove() {
-			throw new UnsupportedOperationException();
 		}
 
 		private int numberOfCoincidences() {

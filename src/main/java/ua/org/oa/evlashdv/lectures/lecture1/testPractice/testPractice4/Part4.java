@@ -4,9 +4,7 @@ package ua.org.oa.evlashdv.lectures.lecture1.testPractice.testPractice4;
 
 public class Part4 {
 	private static final String FILE_NAME = "part4.txt";
-
 	private static final String ENCODING = "Cp1251";
-
 
 	public static void main(String[] args) {
 		Parser parser = new Parser(FILE_NAME, ENCODING);
