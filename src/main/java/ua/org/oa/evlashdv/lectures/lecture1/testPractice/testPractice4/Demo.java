@@ -20,7 +20,6 @@ public class Demo {
 		System.out.println("=========================== PART5");
 		System.setIn(new ByteArrayInputStream("table ru\ntable en\napple ru".getBytes(ENCODING)));
 		Part5.main(args);
-
 	}
 
 }
