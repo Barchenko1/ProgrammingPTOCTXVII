@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class App {
-    public static final String RESOURCES = "./src/main/resources";
+    public static final String RESOURCES = "/main/resources";
 
     public static void main(String[] args) {
         copyTextFiles(RESOURCES + "/text", RESOURCES + "/text1","utf-8","windows-1251");

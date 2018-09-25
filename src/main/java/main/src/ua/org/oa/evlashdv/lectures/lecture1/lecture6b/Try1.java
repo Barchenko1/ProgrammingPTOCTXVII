@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Try1 {
-    private static final String path ="./src/main/resources/data2";
+    private static final String path = "/main/resources/data2";
     private static ArrayList<String> listWithFileNames = new ArrayList<>();
     public static void main(String[] args) {
         getListFiles("D:\\Siemens NX");
