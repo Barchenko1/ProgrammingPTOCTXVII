@@ -26,7 +26,7 @@ public class newApp {
         String[] array=str.split(System.lineSeparator());
 
         System.out.println(Arrays.toString(array));
-        //Arrays.sort(array);
+        Arrays.sort(array);
         stringToFile(arrayToString(array));
 
     }
