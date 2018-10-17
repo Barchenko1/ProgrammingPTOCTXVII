@@ -83,7 +83,6 @@ public class Part3 {
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
                 counter.incrementCounter2();
@@ -115,7 +114,6 @@ public class Part3 {
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                     counter.incrementCounter2();
