@@ -1,6 +1,5 @@
 package ua.org.oa.evlashdv.lectures.lecture1.testPracticeN.practice1.part3;
 
-
 import ua.org.oa.evlashdv.lectures.lecture1.testPracticeN.practice1.part2.Circle;
 import ua.org.oa.evlashdv.lectures.lecture1.testPracticeN.practice1.part2.Figure;
 import ua.org.oa.evlashdv.lectures.lecture1.testPracticeN.practice1.part2.Triangle;
